@@ -5,12 +5,18 @@
 
   <body class="index">
 
+    <div id="container"></div>
+
+    <div class="wrapper">
+
     {{ partial "nav.html" . }}
 
     {{ partial "logo.html" . }}
+
+    </div>
   
     {{ "<!-- Scripts -->" | safeHTML}}
-      {{ partial "js.html" . }}
+      {{ partial "js-home.html" . }}
 
   </body>
 </html>
