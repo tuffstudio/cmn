@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on Creative Media Network Midlands</title>
+    <link>/events/</link>
+    <description>Recent content in Events on Creative Media Network Midlands</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/events/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Event 1</title>
+      <link>/events/event1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/events/event1/</guid>
+      <description>EVENT 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.</description>
+    </item>
+    
+    <item>
+      <title>Event 2</title>
+      <link>/events/event2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/events/event2/</guid>
+      <description>EVENT 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Creative Media Network Midlands</title>
+    <link>/</link>
+    <description>Recent content on Creative Media Network Midlands</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.
+Vivamus bibendum eros ac leo euismod, id aliquam neque mollis. In ultricies quis arcu at eleifend. Aenean egestas commodo rhoncus. Pellentesque pulvinar neque scelerisque quam elementum, id eleifend mi tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.
+Co-ordinator chris@phoenix.org.uk</description>
+    </item>
+    
+    <item>
+      <title>Event 1</title>
+      <link>/events/event1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/events/event1/</guid>
+      <description>EVENT 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.</description>
+    </item>
+    
+    <item>
+      <title>Event 2</title>
+      <link>/events/event2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/events/event2/</guid>
+      <description>EVENT 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis ligula. In purus risus, eleifend ut orci et, imperdiet pulvinar enim. Maecenas lacinia urna neque, quis imperdiet ex placerat sed.</description>
+    </item>
+    
+  </channel>
+</rss>
