@@ -1,5 +1,70 @@
 /* Start of example */
 
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+  blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr,
+  html, iframe, legend, li, ol, p, pre, textarea, ul {
+      margin: 0;
+      padding: 0
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      font-size: 100%;
+      font-weight: 400
+  }
+  
+  ul {
+      list-style: none
+  }
+  
+  button, input, select, textarea {
+      margin: 0
+  }
+  
+  html {
+      box-sizing: border-box
+  }
+  
+  * , ::after, ::before {
+      box-sizing: inherit
+  }
+  
+  audio, img, video {
+      height: auto;
+      max-width: 100%
+  }
+  
+  iframe {
+      border: 0
+  }
+  
+  table {
+      border-collapse: collapse;
+      border-spacing: 0
+  }
+  
+  td, th {
+      padding: 0;
+      text-align: left
+  }
+  
+  html {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      text-rendering: optimizeLegibility;
+      // -webkit-text-size-adjust: 100%;
+      // -moz-text-size-adjust: 100%;
+      // -ms-text-size-adjust: 100%;
+      // text-size-adjust: 100%
+  }
+  
+  article, aside, figure, footer, header, hgroup, section {
+      display: block
+  }
+
+// minireset end
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
@@ -21,25 +86,6 @@
       }
     }
   }
-}
-
-/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
-/// @param {string} $svg SVG data URL.
-/// @return {string} Encoded SVG data URL.
-@function svg-url($svg) {
-
-  $svg: str-replace($svg, '"', '\'');
-  $svg: str-replace($svg, '%', '%25');
-  $svg: str-replace($svg, '<', '%3C');
-  $svg: str-replace($svg, '>', '%3E');
-  $svg: str-replace($svg, '&', '%26');
-  $svg: str-replace($svg, '#', '%23');
-  $svg: str-replace($svg, '{', '%7B');
-  $svg: str-replace($svg, '}', '%7D');
-  $svg: str-replace($svg, ';', '%3B');
-
-  @return url("data:image/svg+xml;charset=utf8,#{$svg}");
-
 }
 
 @mixin fat-typography{
@@ -73,7 +119,6 @@ html {
 }
 
 body{
-  padding: 5%;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   line-height: 1.4;
@@ -95,9 +140,22 @@ body{
     letter-spacing: 0.05em;
   }
 
-  #container{
-    position: fixed;
+  #container {
+      position: fixed;
+      z-index: 0;
   }
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    z-index: 10;
+  }
+
 
   &.index{
     text-align: center;
@@ -107,11 +165,29 @@ body{
         margin: 0 auto;
         color: black;
         padding: 15px;
-        margin: 5px auto;
+        margin: 5px auto 0;
+        // background-color: lime;
 
         &.texty{
 
           padding-bottom: 0;
+
+          // background-color: aliceblue;
+
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          display: inline-flex;
+          justify-content: flex-start;
+          position: relative;
+          vertical-align: top;
+          justify-content: center;
+          // text-align: center;
+          white-space: nowrap;
 
           em{
             @include fat-typography;
@@ -125,9 +201,10 @@ body{
 
           padding: 0;
           margin: 0;
+          // margin-bottom: -2px;
 
           a{
-          // text-decoration: none;
+          padding-top: 5px;
           text-transform: uppercase;
           text-align: center;
           font-size: 22px;
@@ -135,6 +212,27 @@ body{
           letter-spacing: $ls-a+em;
           color: rgba(29,29,27,0);
           margin-left: $ls-a * 0.8+em;
+
+          // background-color: beige;
+
+
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          display: inline-flex;
+          justify-content: flex-start;
+          position: relative;
+          vertical-align: top;
+          cursor: pointer;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+
+
           }
           a:hover{
            color: rgba(29,29,27,1); 
@@ -172,6 +270,9 @@ body{
     }
 
     #logo{
+
+      position: relative;
+
       img{
         width: 12%;
         height: auto;
@@ -183,7 +284,7 @@ body{
   }
 
   &.page{
-
+    padding: 5%;
     letter-spacing: 0.12em;
     font-size: 24px;
     word-break: break-all;
@@ -269,16 +370,10 @@ body{
       .date{
         font-weight: 400;
         margin-top: 7px;
-        word-break: normal;
       }
 
       h3{
         margin:0;
-        font-weight: 500;
-      }
-
-      p{
-        margin: 0;
       }
 
     }

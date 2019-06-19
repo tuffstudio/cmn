@@ -1,4 +1,51 @@
 /* Start of example */
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr,
+html, iframe, legend, li, ol, p, pre, textarea, ul {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 400; }
+
+ul {
+  list-style: none; }
+
+button, input, select, textarea {
+  margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, ::after, ::before {
+  box-sizing: inherit; }
+
+audio, img, video {
+  height: auto;
+  max-width: 100%; }
+
+iframe {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0;
+  text-align: left; }
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility; }
+
+article, aside, figure, footer, header, hgroup, section {
+  display: block; }
+
 /* colours */
 html {
   font-size: 16px; }
@@ -10,7 +57,6 @@ html {
       font-size: 24px; } }
 
 body {
-  padding: 5%;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   line-height: 1.4;
@@ -25,16 +71,39 @@ body {
     font-size: 16px;
     letter-spacing: 0.05em; }
   body #container {
-    position: fixed; }
+    position: fixed;
+    z-index: 0; }
+  body .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    z-index: 10; }
   body.index {
     text-align: center; }
     body.index nav > div {
       margin: 0 auto;
       color: black;
       padding: 15px;
-      margin: 5px auto; }
+      margin: 5px auto 0; }
       body.index nav > div.texty {
-        padding-bottom: 0; }
+        padding-bottom: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        display: inline-flex;
+        justify-content: flex-start;
+        position: relative;
+        vertical-align: top;
+        justify-content: center;
+        white-space: nowrap; }
         body.index nav > div.texty em {
           color: #1d1d1b;
           font-weight: bold;
@@ -53,13 +122,29 @@ body {
         padding: 0;
         margin: 0; }
         body.index nav > div.linky a {
+          padding-top: 5px;
           text-transform: uppercase;
           text-align: center;
           font-size: 22px;
           font-weight: 400;
           letter-spacing: 0.2em;
           color: rgba(29, 29, 27, 0);
-          margin-left: 0.16em; }
+          margin-left: 0.16em;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          display: inline-flex;
+          justify-content: flex-start;
+          position: relative;
+          vertical-align: top;
+          cursor: pointer;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap; }
         body.index nav > div.linky a:hover {
           color: #1d1d1b; }
     body.index nav hr {
@@ -76,12 +161,15 @@ body {
         border-color: #e44692; }
       body.index nav hr:nth-of-type(3) {
         border-color: #5cb02f; }
-    body.index #logo img {
-      width: 12%;
-      height: auto;
-      min-width: 180px;
-      padding-top: 30px; }
+    body.index #logo {
+      position: relative; }
+      body.index #logo img {
+        width: 12%;
+        height: auto;
+        min-width: 180px;
+        padding-top: 30px; }
   body.page {
+    padding: 5%;
     letter-spacing: 0.12em;
     font-size: 24px;
     word-break: break-all;
@@ -146,12 +234,8 @@ body {
     margin-bottom: 150px; }
     body.events article .date {
       font-weight: 400;
-      margin-top: 7px;
-      word-break: normal; }
+      margin-top: 7px; }
     body.events article h3 {
-      margin: 0;
-      font-weight: 500; }
-    body.events article p {
       margin: 0; }
   body.contact {
     color: #5cb02f; }
