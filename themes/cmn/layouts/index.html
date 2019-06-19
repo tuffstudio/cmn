@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ 
+ {{ partial "head.html" . }}
+
+  <body class="index">
+
+    {{ partial "nav.html" . }}
+
+    {{ partial "logo.html" . }}
+  
+    {{ "<!-- Scripts -->" | safeHTML}}
+      {{ partial "js.html" . }}
+
+  </body>
+</html>

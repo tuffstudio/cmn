@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+
+    {{ partial "head.html" . }}
+    <body class="page about">
+
+    {{ partial "nav-back.html" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="content">
+     
+     {{ .Content }}
+
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+        {{ partial "js.html" . }}
+
+    </body>
+</html>

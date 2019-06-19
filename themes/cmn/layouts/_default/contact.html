@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+    {{ partial "head.html" . }}
+    <body class="page contact">
+
+      {{ partial "nav-back.html" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="content">
+     
+     {{ .Content }}
+
+      <small>Supported by the Arts Council</small>
+    </div>
+
+    {{ partial "logo.html" . }}
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+        {{ partial "js.html" . }}
+
+    </body>
+</html>

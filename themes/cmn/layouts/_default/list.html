@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+    {{ partial "head.html" . }}
+    <body class="page events">
+
+    {{ partial "nav-back.html" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="content">
+     
+     {{ range .Pages }}
+
+        <article>
+          <header>
+            <div class="date">{{ .Param "event_venue" }}, <time>{{.Param "event_date" }}, {{ .Param "event_time" }}</time></div>
+            <h3>{{ .Title }}</h3>
+          </header>
+          <section>
+            {{ .Content }}
+          </section>
+        </article>
+
+    {{ end }}
+
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+        {{ partial "js.html" . }}
+
+    </body>
+</html>

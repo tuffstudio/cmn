@@ -1,0 +1,302 @@
+/* Start of example */
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
+/// @param {string} $svg SVG data URL.
+/// @return {string} Encoded SVG data URL.
+@function svg-url($svg) {
+
+  $svg: str-replace($svg, '"', '\'');
+  $svg: str-replace($svg, '%', '%25');
+  $svg: str-replace($svg, '<', '%3C');
+  $svg: str-replace($svg, '>', '%3E');
+  $svg: str-replace($svg, '&', '%26');
+  $svg: str-replace($svg, '#', '%23');
+  $svg: str-replace($svg, '{', '%7B');
+  $svg: str-replace($svg, '}', '%7D');
+  $svg: str-replace($svg, ';', '%3B');
+
+  @return url("data:image/svg+xml;charset=utf8,#{$svg}");
+
+}
+
+@mixin fat-typography{
+  color: $blacky;
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Work Sans', sans-serif;
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+$mod_1: 1.5; // mobile
+$mod_2: 1.6; // desktop
+
+$mod_1-back: 1.15; // mobile
+$mod_2-back: 1.4; // desktop
+
+$ls-a: 0.2; // letter spacing -> a link
+
+/* colours */
+$redy: #E20613;
+$pinky: #E44692;
+$greeny: #5CB02F;
+$blacky: #1D1D1B;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+body{
+  padding: 5%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $blacky;
+  background-color: #FFFEF2;
+  
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  em{
+    font-style: normal;
+  }
+
+  small{
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  #container{
+    position: fixed;
+  }
+
+  &.index{
+    text-align: center;
+
+    nav{
+      > div{
+        margin: 0 auto;
+        color: black;
+        padding: 15px;
+        margin: 5px auto;
+
+        &.texty{
+
+          padding-bottom: 0;
+
+          em{
+            @include fat-typography;
+            font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+            @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+          }
+        }
+
+
+        &.linky{
+
+          padding: 0;
+          margin: 0;
+
+          a{
+          // text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 22px;
+          font-weight: 400;
+          letter-spacing: $ls-a+em;
+          color: rgba(29,29,27,0);
+          margin-left: $ls-a * 0.8+em;
+          }
+          a:hover{
+           color: rgba(29,29,27,1); 
+          }
+        }
+        
+
+      }
+
+      hr{
+            height: 2px;
+            border: 0;
+            border-top: 2px solid #ccc;
+            padding: 0;
+            width: 11%;
+            max-width: 70px;
+            // min-width: 70px;
+            margin: 0 auto;
+
+            &:nth-of-type(1){
+              border-color: $redy;
+            }
+
+            &:nth-of-type(2){
+              border-color: $pinky;
+            }
+
+            &:nth-of-type(3){
+              border-color: $greeny;
+            }
+
+      }
+
+
+    }
+
+    #logo{
+      img{
+        width: 12%;
+        height: auto;
+        min-width: 180px;
+        padding-top: 30px;
+      }
+    }
+
+  }
+
+  &.page{
+
+    letter-spacing: 0.12em;
+    font-size: 24px;
+    word-break: break-all;
+    hyphens: auto;
+
+    @media only screen and (max-width:320px) {
+      font-size: 20px;
+    }
+
+    h1{
+      padding-top:3px;
+      margin-top: 0;
+      margin-bottom: 130px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 27px;
+
+      @media only screen and (max-width:414px) {
+        margin-bottom: 65px;
+      }
+
+      @media only screen and (max-width:320px) {
+        font-size: 23px;
+      }
+    }
+
+    nav.back{
+      display: inline-block;
+      float: right;
+
+      a{
+
+        @include fat-typography;
+        font-size: $mod_1-back*$mod_1-back*$mod_1-back*$mod_1-back *1rem; 
+        @include fluid-type($min_width, $max_width, $mod_1-back*$mod_1-back*$mod_1-back *$min_font, $mod_2-back*$mod_2-back*$mod_2-back *$min_font);
+
+        img{
+          margin-bottom: -3px;
+          width: 100px;
+
+          @media only screen and (max-width:768px) {
+            margin-bottom: -5px;
+          }
+
+          @media only screen and (max-width:414px) {
+            margin-bottom: 0;
+            width: 50px;
+          }
+
+          @media only screen and (max-width:320px) {
+            width: 35px;
+          }
+
+        }
+
+      }
+
+    }
+
+    .content{
+      width: 80%;
+     @media only screen and (max-width:768px) {
+        width: 100%;
+      }
+    }
+
+  }
+
+  &.about{
+    color: $redy;
+  }
+
+  &.events{
+    
+    h1, & h3, & a{
+      color: $pinky;  
+    }
+
+    article{
+      border-top: 2px solid $pinky;
+      margin-bottom: 150px;
+
+      .date{
+        font-weight: 400;
+        margin-top: 7px;
+        word-break: normal;
+      }
+
+      h3{
+        margin:0;
+        font-weight: 500;
+      }
+
+      p{
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  &.contact{
+    color: $greeny;
+    .content{
+      em{
+        font-weight: 800;
+      }
+    }
+    #logo img{
+      width: 130px;
+      margin-top: 15px;
+    }
+  }
+
+  
+}

@@ -1,0 +1,21 @@
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
+<!--   <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">-->
+
+  {{ "<!-- Base Inject -->" | safeHTML }}
+      {{ if .Site.Params.basehref }}
+        <base href="{{ .Site.Params.basehref }}">
+      {{ end }}
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,900|Work+Sans:700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ "css/stylesheet.css" | absURL}}" type="text/css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+  </head>

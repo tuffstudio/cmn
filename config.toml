@@ -1,0 +1,13 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Creative Media Network Midlands"
+theme = "cmn"
+
+[params]
+  # You can use Markdown syntax for urls [text](//url.to/source)
+  # To create multi-line text in strings use the """example Text""" format
+  #
+  # All icons using Fontawesome's icon font. Look at fontawesome.io/icons
+  # for more icons. The icons are represented by their corresponding
+  # CSS class.
+  basehref = "/"
