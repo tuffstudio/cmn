@@ -5,5 +5,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu sagittis 
 
 <br>
 
-**Co-ordinator**\
+**Co-ordinatoring**\
 <mailto:chris@phoenix.org.uk>
