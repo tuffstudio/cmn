@@ -5,6 +5,12 @@
   function autorun()
   {
 
+
+    $('section a:not([href^=htt])').attr('href', function(index, src) {
+         return 'https://raw.githubusercontent.com/tuffstudio/cmn/master/static/img/uploads/' + src;
+    });
+
+
    $('section a').filter('[href$=\\.png],[href$=\\.jpg],[href$=\\.gif],[href*="youtube"],[href*="vimeo"]').fancybox({
     protect: false,
     smallBtn: false,
